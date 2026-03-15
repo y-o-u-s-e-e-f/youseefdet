@@ -437,7 +437,7 @@ footer .f-accent { color:var(--green-br); }
   window.addEventListener('resize',resize);resize();draw();
   document.querySelectorAll('.reveal').forEach(function(el){
     new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)el.classList.add('on');});},{threshold:0.08}).observe(el);
-  });
+  }); //test
   var ft=document.getElementById('ft-time');
   function tick(){ft.textContent=new Date().toLocaleTimeString('en-US',{hour12:false});}
   tick();setInterval(tick,1000);

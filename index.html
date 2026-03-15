@@ -40,7 +40,6 @@ nav ul a:hover{color:var(--ink);background:var(--surface)}
 .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;color:var(--green-br);margin-bottom:1.5rem;animation:fadeUp 0.5s ease both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero-name{font-family:var(--sans);font-size:clamp(4rem,10vw,8rem);font-weight:700;color:var(--ink);letter-spacing:-0.04em;line-height:0.95;margin-bottom:1.5rem;animation:fadeUp 0.5s ease 0.1s both}
-.hero-name .accent{color:var(--green-br)}
 .hero-cursor{display:inline-block;width:0.1em;height:0.85em;background:var(--green-br);margin-left:4px;vertical-align:middle;animation:cur 1s step-end infinite}
 @keyframes cur{50%{opacity:0}}
 .hero-sub{font-size:16px;color:var(--muted);max-width:460px;line-height:1.8;margin-bottom:2.5rem;animation:fadeUp 0.5s ease 0.2s both}
@@ -73,7 +72,7 @@ section{max-width:1080px;margin:0 auto;padding:5.5rem 2.5rem}
 .about-body p{color:var(--ink2);line-height:1.9;margin-bottom:1rem;font-size:14px}
 .kw{color:var(--ink);font-weight:700}
 
-/* OSC CARD — about info card only */
+/* OSC CARD */
 .osc-card{background:#070e07;border-radius:var(--r-lg);overflow:hidden;position:relative;font-family:var(--mono);box-shadow:0 0 0 1px #162216,0 0 24px rgba(0,200,60,0.08),0 6px 20px rgba(0,0,0,0.5)}
 .osc-card::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(0,220,60,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(0,220,60,0.022) 1px,transparent 1px);background-size:18px 18px}
 .osc-card::after{content:'';position:absolute;left:0;right:0;z-index:1;pointer-events:none;height:32px;background:linear-gradient(180deg,transparent 0%,rgba(0,220,60,0.03) 40%,rgba(0,220,60,0.06) 50%,rgba(0,220,60,0.03) 60%,transparent 100%);animation:scan 4s linear infinite}
@@ -125,21 +124,27 @@ section{max-width:1080px;margin:0 auto;padding:5.5rem 2.5rem}
 @keyframes barGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
 /* CONTACT */
-.contact-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem}
-.contact-intro{font-size:14px;color:var(--ink2);line-height:1.9;margin-bottom:1.5rem}
-.contact-links{display:flex;flex-direction:column;gap:0.5rem}
-.contact-link{display:flex;align-items:center;gap:1rem;padding:0.85rem 1rem;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);color:var(--ink2);text-decoration:none;font-size:13px;font-weight:500;transition:all 0.15s}
-.contact-link:hover{border-color:var(--green);color:var(--ink);transform:translateX(4px)}
-.cl-icon{width:28px;height:28px;background:var(--bg2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;color:var(--muted);flex-shrink:0;transition:background 0.15s,color 0.15s}
+.contact-layout{display:flex;flex-direction:column;gap:1.5rem}
+.contact-intro{font-size:15px;color:var(--ink2);line-height:1.9}
+.contact-links{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem}
+.contact-link{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);text-decoration:none;transition:all 0.15s}
+.contact-link:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.cl-icon{width:34px;height:34px;background:var(--bg2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;color:var(--muted);flex-shrink:0;transition:background 0.15s,color 0.15s}
 .contact-link:hover .cl-icon{background:var(--green-lt);color:var(--green-br)}
-.contact-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:2rem;display:flex;flex-direction:column;gap:1rem}
+.cl-info{display:flex;flex-direction:column;gap:2px}
+.cl-label-text{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;color:var(--faint)}
+.cl-value{font-size:13px;color:var(--ink2);font-weight:500}
+.contact-link:hover .cl-value{color:var(--ink)}
+.contact-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-field{display:flex;flex-direction:column;gap:5px}
+.form-field.full{grid-column:1/-1}
 .form-field label{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:0.1em;color:var(--muted)}
 .form-field input,.form-field textarea{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r-sm);color:var(--ink);font-family:var(--sans);font-size:13px;padding:0.65rem 0.85rem;outline:none;resize:none;transition:border-color 0.15s,box-shadow 0.15s}
 .form-field input::placeholder,.form-field textarea::placeholder{color:var(--faint)}
 .form-field input:focus,.form-field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(74,148,100,0.12)}
-.form-field textarea{min-height:110px}
-.form-submit{align-self:flex-end;background:var(--green);color:#000;border:none;border-radius:var(--r-sm);font-family:var(--sans);font-size:13px;font-weight:700;padding:0.7rem 1.5rem;cursor:pointer;transition:all 0.18s}
+.form-field textarea{min-height:100px}
+.form-footer{grid-column:1/-1;display:flex;justify-content:flex-end}
+.form-submit{background:var(--green);color:#000;border:none;border-radius:var(--r-sm);font-family:var(--sans);font-size:13px;font-weight:700;padding:0.7rem 1.75rem;cursor:pointer;transition:all 0.18s}
 .form-submit:hover{background:var(--green-br);transform:translateY(-1px);box-shadow:0 4px 12px rgba(74,148,100,0.25)}
 
 /* FOOTER */
@@ -153,7 +158,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
 @media(max-width:900px){
   nav{padding:0 1.5rem}
   #hero,section,footer{padding-left:1.5rem;padding-right:1.5rem}
-  .about-layout,.contact-layout{grid-template-columns:1fr;gap:2.5rem}
+  .about-layout{grid-template-columns:1fr;gap:2.5rem}
+  .contact-links{grid-template-columns:1fr}
+  .contact-form{grid-template-columns:1fr}
   .skills-layout{grid-template-columns:1fr 1fr;gap:1rem}
 }
 @media(max-width:520px){.skills-layout{grid-template-columns:1fr}}
@@ -177,11 +184,10 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
 <div id="hero">
   <div class="hero-inner">
     <div class="hero-eyebrow">ELECTRICAL ENGINEERING &middot; UNIVERSITY OF MICHIGAN</div>
-    <div class="hero-name">yusuf<span class="accent">.</span><span class="hero-cursor"></span></div>
+    <div class="hero-name">yusuf<span class="hero-cursor"></span></div>
     <p class="hero-sub">Junior EE student &mdash; I work on circuits, write firmware, and figure out why things don&rsquo;t work. Mostly the last one.</p>
     <div class="hero-bento">
-      <div class="bento-tile"><span class="bento-label">SCHOOL</span><span class="bento-val">U of M</span></div>
-      <div class="bento-tile"><span class="bento-label">DEGREE</span><span class="bento-val">B.E. EE</span></div>
+      <div class="bento-tile"><span class="bento-label">DEGREE</span><span class="bento-val">B.S.E. EE</span></div>
       <div class="bento-tile"><span class="bento-label">YEAR</span><span class="bento-val g">Junior</span></div>
       <div class="bento-tile"><span class="bento-label">SEEKING</span><span class="bento-val a">Internship &rsquo;26</span></div>
       <div class="bento-tile"><span class="bento-label">LOCATION</span><span class="bento-val">Ann Arbor, MI</span></div>
@@ -204,8 +210,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
     <div class="about-layout reveal">
       <div class="about-body">
         <p>I&rsquo;m <strong class="kw">Yusuf</strong>, a junior studying Electrical Engineering at the <strong class="kw">University of Michigan, Ann Arbor</strong>. I transferred from Henry Ford Community College and haven&rsquo;t slowed down since.</p>
-        <p>What keeps me engaged is the bridge between <strong class="kw">hardware and software</strong>. Right now I&rsquo;m getting into circuit fundamentals &mdash; op-amps, transistors, RLC analysis &mdash; while also learning how to write clean, structured <strong class="kw">C++</strong> and getting comfortable with the terminal, version control, and build tools. On the hardware side I&rsquo;m building a <strong class="kw">rescue robot</strong> that&rsquo;s supposed to navigate a building and detect heat signatures &mdash; every week we add something new to it.</p>
-        <p>I&rsquo;m still figuring out exactly where in EE I want to go deep &mdash; I&rsquo;d rather be honest about that than fake a specialty. What I do know is I like the point where a circuit starts responding to code. I&rsquo;m looking for an <strong class="kw">internship</strong> where I can do real work and keep learning fast.</p>
+        <p>What keeps me engaged is the space where <strong class="kw">hardware and software</strong> meet. Right now I&rsquo;m learning circuit fundamentals like op-amps, transistors, and RLC analysis, while also picking up how to write clean <strong class="kw">C++</strong> and actually use the tools that make development less painful: the terminal, version control, Makefiles. On the side I&rsquo;m building a <strong class="kw">rescue robot</strong> for one of my classes. The concept is a 2-wheeled robot that navigates a building and finds people using a heat sensor. We add something new to it every week.</p>
+        <p>I don&rsquo;t have a specific specialty yet and I&rsquo;m okay with that. I&rsquo;d rather be honest about where I am than pretend otherwise. What I do know is I enjoy the moment when something you built actually responds the way you intended. Looking for an <strong class="kw">internship</strong> where I can contribute real work and keep building on what I know.</p>
       </div>
       <div class="osc-card">
         <div class="info-head">
@@ -214,9 +220,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
         </div>
         <div class="info-row"><span class="info-key">STATUS</span><span class="info-val live">&#9679; ONLINE</span></div>
         <div class="info-row"><span class="info-key">SCHOOL</span><span class="info-val">University of Michigan</span></div>
-        <div class="info-row"><span class="info-key">DEGREE</span><span class="info-val">B.E. Electrical Eng.</span></div>
+        <div class="info-row"><span class="info-key">DEGREE</span><span class="info-val">B.S.E. Electrical Eng.</span></div>
         <div class="info-row"><span class="info-key">YEAR</span><span class="info-val">Junior</span></div>
-        <div class="info-row"><span class="info-key">FOCUS</span><span class="info-val">HW / SW Bridge</span></div>
+        <div class="info-row"><span class="info-key">FOCUS</span><span class="info-val">Circuits &amp; Embedded</span></div>
         <div class="info-row"><span class="info-key">SEEKING</span><span class="info-val amber">Internship &rsquo;26</span></div>
       </div>
     </div>
@@ -255,8 +261,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
         <div class="skill-group-title">// HARDWARE</div>
         <div class="skill-item"><div class="skill-meta"><span class="skill-name">Circuit Analysis (learning)</span><span class="skill-pct">30</span></div><div class="skill-track"><div class="skill-bar" style="width:30%"></div></div></div>
         <div class="skill-item"><div class="skill-meta"><span class="skill-name">Oscilloscope / DMM (lab)</span><span class="skill-pct">25</span></div><div class="skill-track"><div class="skill-bar" style="width:25%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-name">Breadboarding</span><span class="skill-pct">40</span></div><div class="skill-track"><div class="skill-bar" style="width:40%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-name">Arduino / Embedded C</span><span class="skill-pct">45</span></div><div class="skill-track"><div class="skill-bar" style="width:45%"></div></div></div>
+        <div class="skill-item"><div class="skill-meta"><span class="skill-name">Breadboarding</span><span class="skill-pct">30</span></div><div class="skill-track"><div class="skill-bar" style="width:30%"></div></div></div>
+        <div class="skill-item"><div class="skill-meta"><span class="skill-name">Arduino / Embedded C</span><span class="skill-pct">35</span></div><div class="skill-track"><div class="skill-bar" style="width:35%"></div></div></div>
       </div>
       <div class="skill-group dark-card">
         <div class="skill-group-title">// SOFTWARE</div>
@@ -285,18 +291,28 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
       <span class="sec-cmd">ping yusuf</span>
     </div>
     <div class="contact-layout reveal">
-      <div>
-        <p class="contact-intro">Open to <strong class="kw">internships</strong>, research collabs, or just talking engineering. I read <strong class="kw">every message</strong>.</p>
-        <div class="contact-links">
-          <a href="mailto:youseefdet@gmail.com" class="contact-link"><div class="cl-icon">@</div>youseefdet@gmail.com</a>
-          <a href="https://www.linkedin.com/in/yusuf-moustapha-64556a380/" class="contact-link" target="_blank"><div class="cl-icon">in</div>linkedin.com/in/yusuf</a>
-        </div>
+      <p class="contact-intro">Open to <strong class="kw">internships</strong>, research collabs, or just talking engineering. I read <strong class="kw">every message</strong>.</p>
+      <div class="contact-links">
+        <a href="mailto:youseefdet@gmail.com" class="contact-link">
+          <div class="cl-icon">@</div>
+          <div class="cl-info">
+            <span class="cl-label-text">EMAIL</span>
+            <span class="cl-value">youseefdet@gmail.com</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/yusuf-moustapha-64556a380/" class="contact-link" target="_blank">
+          <div class="cl-icon">in</div>
+          <div class="cl-info">
+            <span class="cl-label-text">LINKEDIN</span>
+            <span class="cl-value">linkedin.com/in/yusuf</span>
+          </div>
+        </a>
       </div>
       <form class="contact-form" action="https://formspree.io/f/mpqyjjqd" method="POST">
         <div class="form-field"><label>NAME</label><input type="text" name="name" placeholder="Your name" required/></div>
         <div class="form-field"><label>EMAIL</label><input type="email" name="email" placeholder="your@email.com" required/></div>
-        <div class="form-field"><label>MESSAGE</label><textarea name="message" placeholder="What's on your mind?" required></textarea></div>
-        <button type="submit" class="form-submit">Send Message &rarr;</button>
+        <div class="form-field full"><label>MESSAGE</label><textarea name="message" placeholder="What's on your mind?" required></textarea></div>
+        <div class="form-footer"><button type="submit" class="form-submit">Send Message &rarr;</button></div>
       </form>
     </div>
   </section>

@@ -12,6 +12,8 @@
   --ink:#eef0ea; --ink2:#c8ccc2; --muted:#7a8070; --faint:#4a5044;
   --green:#4a9464; --green-br:#5cb87a; --green-lt:#1a2e1e; --green-xl:#142018;
   --amber:#c97a2a;
+  --maize:#FFCB05;
+  --uofm-blue:#5B8DB8;
   --mono:'DM Mono',monospace; --sans:'DM Sans',sans-serif;
   --r-sm:6px; --r:10px; --r-lg:14px;
 }
@@ -42,7 +44,7 @@ nav ul a:hover{color:var(--ink);background:var(--surface)}
 .hero-name{font-family:var(--sans);font-size:clamp(4rem,10vw,8rem);font-weight:700;color:var(--ink);letter-spacing:-0.04em;line-height:0.95;margin-bottom:1.5rem;animation:fadeUp 0.5s ease 0.1s both}
 .hero-cursor{display:inline-block;width:0.1em;height:0.85em;background:var(--green-br);margin-left:4px;vertical-align:middle;animation:cur 1s step-end infinite}
 @keyframes cur{50%{opacity:0}}
-.hero-sub{font-size:16px;color:var(--muted);max-width:460px;line-height:1.8;margin-bottom:2.5rem;animation:fadeUp 0.5s ease 0.2s both}
+.hero-sub{font-size:16px;color:#d4c9b8;max-width:460px;line-height:1.8;margin-bottom:2.5rem;animation:fadeUp 0.5s ease 0.2s both}
 .hero-sub strong{color:var(--ink2);font-weight:600}
 .hero-bento{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem;animation:fadeUp 0.5s ease 0.3s both}
 .bento-tile{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:0.8rem 1.3rem;text-align:left;min-width:110px;transition:border-color 0.2s}
@@ -71,6 +73,9 @@ section{max-width:1080px;margin:0 auto;padding:5.5rem 2.5rem}
 .about-layout{display:grid;grid-template-columns:1fr 290px;gap:4rem;align-items:start}
 .about-body p{color:var(--ink2);line-height:1.9;margin-bottom:1rem;font-size:14px}
 .kw{color:var(--ink);font-weight:700}
+.kw-amber{color:var(--amber);font-weight:700}
+.kw-maize{color:var(--maize);font-weight:700}
+.kw-blue{color:var(--uofm-blue);font-weight:700}
 
 /* OSC CARD */
 .osc-card{background:#070e07;border-radius:var(--r-lg);overflow:hidden;position:relative;font-family:var(--mono);box-shadow:0 0 0 1px #162216,0 0 24px rgba(0,200,60,0.08),0 6px 20px rgba(0,0,0,0.5)}
@@ -209,8 +214,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
     </div>
     <div class="about-layout reveal">
       <div class="about-body">
-        <p>I&rsquo;m <strong class="kw">Yusuf</strong>, a junior studying Electrical Engineering at the <strong class="kw">University of Michigan, Ann Arbor</strong>. I transferred from Henry Ford Community College and haven&rsquo;t slowed down since.</p>
-        <p>What keeps me engaged is the space where <strong class="kw">hardware and software</strong> meet. Right now I&rsquo;m learning circuit fundamentals like op-amps, transistors, and RLC analysis, while also picking up how to write clean <strong class="kw">C++</strong> and actually use the tools that make development less painful: the terminal, version control, Makefiles. On the side I&rsquo;m building a <strong class="kw">rescue robot</strong> for one of my classes. The concept is a 2-wheeled robot that navigates a building and finds people using a heat sensor. We add something new to it every week.</p>
+        <p>I&rsquo;m <strong class="kw-blue">Yusuf</strong>, a junior studying Electrical Engineering at the <strong class="kw-maize">University of Michigan, Ann Arbor</strong>. I transferred from Henry Ford Community College and haven&rsquo;t slowed down since.</p>
+        <p>What keeps me engaged is the space where <strong class="kw">hardware and software</strong> meet. Right now I&rsquo;m learning circuit fundamentals like <strong class="kw-amber">op-amps</strong>, <strong class="kw-amber">transistors</strong>, and <strong class="kw-amber">RLC analysis</strong>, while also picking up how to write clean <strong class="kw">C++</strong> and actually use the tools that make development less painful: the terminal, version control, Makefiles. On the side I&rsquo;m building a <strong class="kw">rescue robot</strong> for one of my classes. The concept is a 2-wheeled robot that navigates a building and finds people using a <strong class="kw-amber">heat sensor</strong>. We add something new to it every week.</p>
         <p>I don&rsquo;t have a specific specialty yet and I&rsquo;m okay with that. I&rsquo;d rather be honest about where I am than pretend otherwise. What I do know is I enjoy the moment when something you built actually responds the way you intended. Looking for an <strong class="kw">internship</strong> where I can contribute real work and keep building on what I know.</p>
       </div>
       <div class="osc-card">
